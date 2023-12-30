@@ -15,7 +15,8 @@ const Drawer = ({
     show,
     handleClose,
     children,
-    handleSubmit
+    handleSubmit,
+    handleCancel
 }) => {
     return (
         <div className='Segment-Section'>
@@ -46,7 +47,7 @@ const Drawer = ({
                     <Button
                         style={{ color: "red" }}
                         variant="danger"
-                        onClick={handleClose}
+                        onClick={handleCancel}
                     >
                         Cancel
                     </Button>

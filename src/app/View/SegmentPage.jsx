@@ -69,7 +69,8 @@ const SegmentPage = () => {
     const handleSubmit = () => {
         if (validateForm()) {
             const formDatas = transformData(segmentForm)
-            console.log(formDatas)
+            alert(JSON.stringify(formDatas))
+            setSegmentForm(initialState)
         }
     }
 
@@ -79,7 +80,10 @@ const SegmentPage = () => {
 
     }
 
-    console.log(segmentForm)
+    const handleCancel = () => {
+        setShow(false)
+        setSegmentForm(initialState)
+    }
     return (
         <>
             <div className='main-section'>
@@ -90,7 +94,7 @@ const SegmentPage = () => {
                     Save segment
                 </Button>
             </div>
-            <Drawer show={show} handleClose={handleClose} handleSubmit={handleSubmit}>
+            <Drawer show={show} handleClose={handleClose} handleCancel={handleCancel} handleSubmit={handleSubmit}>
                 <SegmentForm
                     handleFormChange={handleFormChange}
                     formData={segmentForm}
